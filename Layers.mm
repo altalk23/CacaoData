@@ -1,20 +1,21 @@
 // Layers
 
 class FLAlertLayer : cocos2d::CCLayerColor {
-    virtual ~FLAlertLayer() = 0x25db60;
-    virtual void onEnter() = 0x25f350;
-    virtual bool ccTouchBegan(cocos2d::CCTouch*, cocos2d::CCEvent*) = 0x25ee40;
-    virtual void ccTouchMoved(cocos2d::CCTouch*, cocos2d::CCEvent*) = 0x25f0a0;
-    virtual void ccTouchEnded(cocos2d::CCTouch*, cocos2d::CCEvent*) = 0x25ef60;
-    virtual void ccTouchCancelled(cocos2d::CCTouch*, cocos2d::CCEvent*) = 0x25f020;
-    virtual void registerWithTouchDispatcher() = 0x25f2e0;
-    virtual void keyBackClicked() = 0x25ed90;
-    virtual void keyDown(cocos2d::enumKeyCodes) = 0x25ece0;
-    virtual void show() = 0x25f120;
+    virtual ~FLAlertLayer() =                                               0x25db60;
+    virtual void onEnter() =                                                0x25f350;
+    virtual bool ccTouchBegan(cocos2d::CCTouch*, cocos2d::CCEvent*) =       0x25ee40;
+    virtual void ccTouchMoved(cocos2d::CCTouch*, cocos2d::CCEvent*) =       0x25f0a0;
+    virtual void ccTouchEnded(cocos2d::CCTouch*, cocos2d::CCEvent*) =       0x25ef60;
+    virtual void ccTouchCancelled(cocos2d::CCTouch*, cocos2d::CCEvent*) =   0x25f020;
+    virtual void registerWithTouchDispatcher() =                            0x25f2e0;
+    virtual void keyBackClicked() =                                         0x25ed90;
+    virtual void keyDown(cocos2d::enumKeyCodes) =                           0x25ece0;
+    virtual void show() =                                                   0x25f120, 0x23560;
 
-    bool init(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*, float, bool, float) = 0x25e1b0;
+    bool init(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*, float, bool, float) =                   0x25e1b0;
 
-    static FLAlertLayer* create(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*, float) = 0x25e0e0;
+    static FLAlertLayer* create(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*) =                             , 0x22680;
+    static FLAlertLayer* create(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*, float) =              0x25e0e0, 0x22730;
     static FLAlertLayer* create(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*, float, bool, float) = 0x25dec0;
     
     volatile static FLAlertLayer* create(char const* title, const gd::string &desc, char const* btn) {
