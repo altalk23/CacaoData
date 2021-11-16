@@ -129,11 +129,11 @@ class CCLightFlash {
     void playEffect(cocos2d::CCPoint, cocos2d::_ccColor3B, float, float, float, float, float, float, float, float, float, float, float, float, float, float, int, bool, bool, float) = 0x295900;
 }
 
-class CCMenuItemSpriteExtra {
-    static CCMenuItemSpriteExtra* create(cocos2d::CCNode*, cocos2d::CCNode*, cocos2d::CCObject*, cocos2d::SEL_MenuHandler) = 0x1253c0;
-    void setSizeMult(float) = 0x1255e0;
+class CCMenuItemSpriteExtra : cocos2d::CCMenuItemSprite {
+    static CCMenuItemSpriteExtra* create(cocos2d::CCNode*, cocos2d::CCNode*, cocos2d::CCObject*, cocos2d::SEL_MenuHandler) = 0x1253c0, 0x18ee0;
+    void setSizeMult(float) = 0x1255e0, 0x19080;
     CCMenuItemSpriteExtra() = 0x32670;
-    bool init(cocos2d::CCNode*, cocos2d::CCNode*, cocos2d::CCObject*, cocos2d::SEL_MenuHandler) = 0x125450;
+    bool init(cocos2d::CCNode*, cocos2d::CCNode*, cocos2d::CCObject*, cocos2d::SEL_MenuHandler) = 0x125450, 0x18fa0;
 }
 
 class CCMenuItemToggler : cocos2d::CCMenuItem {

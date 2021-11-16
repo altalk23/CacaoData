@@ -93,7 +93,27 @@ class cocos2d::CCDictionary {
 }
 
 class cocos2d::CCDirector {
-    void getTouchDispatcher() = 0x24afa0;
+    virtual ~CCDirector() = 0x2493a0;
+    virtual bool init() = 0x248df0;
+    virtual void getScheduler() = 0x24af00;
+    virtual void setScheduler(cocos2d::CCScheduler*) = 0x24aec0;
+    virtual void getActionManager() = 0x24af50;
+    virtual void setActionManager(cocos2d::CCActionManager*) = 0x24af10;
+    virtual void getTouchDispatcher() = 0x24afa0;
+    virtual void setTouchDispatcher(cocos2d::CCTouchDispatcher*) = 0x24af60;
+    virtual void getKeypadDispatcher() = 0x24b090;
+    virtual void setKeypadDispatcher(cocos2d::CCKeypadDispatcher*) = 0x24b050;
+    virtual void getKeyboardDispatcher() = 0x24aff0;
+    virtual void setKeyboardDispatcher(cocos2d::CCKeyboardDispatcher*) = 0x24afb0;
+    virtual void getMouseDispatcher() = 0x24b040;
+    virtual void setMouseDispatcher(cocos2d::CCMouseDispatcher*) = 0x24b000;
+    virtual void getAccelerometer() = 0x24b0e0;
+    virtual void setAccelerometer(cocos2d::CCAccelerometer*) = 0x24b0a0;
+    virtual void getDeltaTime() = 0x249bd0;
+    virtual void getSceneDelegate() = 0x24b320;
+    virtual void setSceneDelegate(cocos2d::CCSceneDelegate*) = 0x24b330;
+
+
     void getWinSize() = 0x24a0f0;
     void pushScene(cocos2d::CCScene*) = 0x24a620;
     void replaceScene(cocos2d::CCScene*) = 0x24a6d0;
@@ -106,6 +126,7 @@ class cocos2d::CCDirector {
     void setNextScene() = 0x2498d0;
     void showStats() = 0x2499e0;
     void updateContentScale(cocos2d::TextureQuality) = 0x249ff0;
+    bool popSceneWithTransition(float, cocos2d::PopTransition) = 0x24a8b0;
 }
 
 class cocos2d::CCDrawNode {
@@ -183,6 +204,14 @@ class cocos2d::CCKeyboardDelegate {
 class cocos2d::CCKeyboardDispatcher {
     void dispatchKeyboardMSG(cocos2d::enumKeyCodes, bool) = 0xe8190;
 }
+
+class cocos2d::CCKeypadHandler {
+    static cocos2d::CCKeypadHandler* handlerWithDelegate(cocos2d::CCKeypadDelegate*) = 0x1ff2d0;
+    virtual bool initWithDelegate(cocos2d::CCKeypadDelegate*) = 0x1ff290;
+    virtual ~CCKeypadHandler() = 0x1ff130;
+    cocos2d::CCKeypadDelegate* getDelegate() = 0x1ff0b0;
+}
+
 
 class cocos2d::CCLabelBMFont {
     static cocos2d::CCLabelBMFont* create(char const*, char const*) = 0x347660;
@@ -618,6 +647,9 @@ class cocos2d::CCSprite {
 
     static cocos2d::CCSprite* create() = 0x132df0;
     static cocos2d::CCSprite* create(char const*) = 0x132a80;
+    static cocos2d::CCSprite* createWithSpriteFrame(cocos2d::CCSpriteFrame*) = 0x132cb0;
+    static cocos2d::CCSprite* createWithSpriteFrameName(char const*) = 0x132dc0;
+    static cocos2d::CCSprite* createWithTexture(cocos2d::CCTexture2D*) = 0x132790;
 }
 
 class cocos2d::CCSpriteBatchNode {
