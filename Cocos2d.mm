@@ -205,6 +205,12 @@ class cocos2d::CCKeyboardDispatcher {
     void dispatchKeyboardMSG(cocos2d::enumKeyCodes, bool) = 0xe8190;
 }
 
+class cocos2d::CCKeyboardHandler {
+    static cocos2d::CCKeyboardHandler* handlerWithDelegate(cocos2d::CCKeyboardDelegate*) = 0x242030;
+    virtual bool initWithDelegate(cocos2d::CCKeyboardDelegate*) = 0x241ff0;
+    ~CCKeyboardHandler() = 0x241e90;
+}
+
 class cocos2d::CCKeypadHandler {
     static cocos2d::CCKeypadHandler* handlerWithDelegate(cocos2d::CCKeypadDelegate*) = 0x1ff2d0;
     virtual bool initWithDelegate(cocos2d::CCKeypadDelegate*) = 0x1ff290;
@@ -373,6 +379,12 @@ class cocos2d::CCMouseDelegate {
     volatile void cocos2d::CCMouseDelegate::scrollWheel(float, float) {};
 
     // volatile cocos2d::CCMouseDelegate::CCMouseDelegate() {};
+}
+
+class cocos2d::CCMouseHandler {
+    static cocos2d::CCMouseHandler* handlerWithDelegate(cocos2d::CCMouseDelegate*) = 0x12ef80;
+    virtual bool initWithDelegate(cocos2d::CCMouseDelegate*) = 0x12ef40;
+    ~CCMouseHandler() = 0x12ede0;
 }
 
 class cocos2d::CCMoveBy {
@@ -582,6 +594,12 @@ class cocos2d::CCScheduler {
 class cocos2d::CCSequence {
 }
 
+class cocos2d::CCSet {
+    CCSet() = 0x45ad80;
+    virtual ~CCSet() = 0x45b050;
+    virtual void acceptVisitor(cocos2d::CCDataVisitor& visitor) = 0x45b090;
+}
+
 class cocos2d::CCSprite {
     virtual ~CCSprite() = 0x133430;
     virtual void init() = 0x132ef0;
@@ -665,6 +683,12 @@ class cocos2d::CCSpriteFrameCache {
     void spriteFrameByName(char const*) = 0x19a7e0;
 }
 
+class cocos2d::CCStandardTouchHandler {
+    static cocos2d::CCStandardTouchHandler* handlerWithDelegate(cocos2d::CCTouchDelegate*, int) = 0x247f30;
+    virtual bool initWithDelegate(cocos2d::CCTouchDelegate*, int) = 0x247ed0;
+    ~CCStandardTouchHandler() = 0x2482a0;
+}
+
 class cocos2d::CCString {
     virtual ~CCString() = 0x44c590;
     virtual void isEqual(cocos2d::CCObject const*) = 0x44c8f0;
@@ -677,6 +701,13 @@ class cocos2d::CCString {
     void getCString() const = 0x44c470;
     void intValue() const = 0x44c780;
 }
+
+class cocos2d::CCTargetedTouchHandler {
+    static cocos2d::CCTargetedTouchHandler* handlerWithDelegate(cocos2d::CCTouchDelegate*, int, bool) = 0x248010;
+    virtual bool initWithDelegate(cocos2d::CCTouchDelegate*, int, bool) = 0x2480f0;
+    ~CCTargetedTouchHandler() = 0x248180;
+}
+
 
 class cocos2d::CCTexture2D {
     ~CCTexture2D() = 0x246350;
@@ -717,6 +748,11 @@ class cocos2d::CCTouch {
 class cocos2d::CCTouchDispatcher {
     void decrementForcePrio(int) = 0x280f70;
     void incrementForcePrio(int) = 0x280f60;
+}
+
+class cocos2d::CCTouchHandler {
+    virtual bool initWithDelegate(cocos2d::CCTouchDelegate*, int) = 0x247d10;
+    ~CCTouchHandler() = 0x247de0;
 }
 
 class cocos2d::CCTransitionFade {
