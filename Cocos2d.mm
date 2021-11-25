@@ -82,13 +82,13 @@ class cocos2d::CCDictionary {
     auto allKeys() = 0x190450;
     auto count() = 0x190430;
     static cocos2d::CCDictionary* create() = 0x192650;
-    auto objectForKey(long) = 0x190bb0;
+    auto objectForKey(intptr_t) = 0x190bb0;
     auto objectForKey(std::string const&) = 0x190870;
     auto removeAllObjects() = 0x190220;
-    auto removeObjectForKey(long) = 0x1921d0;
-    auto setObject(cocos2d::CCObject*, long) = 0x191790;
+    auto removeObjectForKey(intptr_t) = 0x1921d0;
+    auto setObject(cocos2d::CCObject*, intptr_t) = 0x191790;
     auto setObject(cocos2d::CCObject*, std::string const&) = 0x190dc0;
-    auto valueForKey(long) = 0x190cf0;
+    auto valueForKey(intptr_t) = 0x190cf0;
     auto valueForKey(std::string const&) = 0x1907a0;
 }
 

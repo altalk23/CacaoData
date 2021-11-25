@@ -433,8 +433,11 @@ class FLAlertLayer : cocos2d::CCLayerColor {
 
     bool init(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*, float, bool, float) =                   0x25e1b0;
 
+    '_ZN12FLAlertLayer6createEP20FLAlertLayerProtocolPKcSsS3_S3_'
     static FLAlertLayer* create(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*) =                             , 0x22680;
+    '_ZN12FLAlertLayer6createEP20FLAlertLayerProtocolPKcSsS3_S3_f'
     static FLAlertLayer* create(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*, float) =              0x25e0e0, 0x22730;
+    '_ZN12FLAlertLayer6createEP20FLAlertLayerProtocolPKcSsS3_S3_fbf'
     static FLAlertLayer* create(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*, float, bool, float) = 0x25dec0;
     
     volatile static FLAlertLayer* create(char const* title, const gd::string &desc, char const* btn) {
@@ -461,6 +464,13 @@ class FLAlertLayer : cocos2d::CCLayerColor {
 
 class FLAlertLayerProtocol {
     volatile virtual void FLAlert_Clicked(FLAlertLayer*, bool) {};
+}
+
+class GameToolbox {
+    '_ZN11GameToolbox18createToggleButtonESsMN7cocos2d8CCObjectEFvPS1_EbPNS0_6CCMenuENS0_7CCPointEPNS0_6CCNodeES9_PNS0_7CCArrayE'
+    static CCMenuItemToggler createToggleButton(gd::string, cocos2d::SEL_MenuHandler, bool, cocos2d::CCMenu*, cocos2d::CCPoint, cocos2d::CCNode*, cocos2d::CCNode*, cocos2d::CCArray*) = 0x0;
+    '_ZN11GameToolbox18createToggleButtonESsMN7cocos2d8CCObjectEFvPS1_EbPNS0_6CCMenuENS0_7CCPointEPNS0_6CCNodeES9_fffS7_PKcbiPNS0_7CCArrayE'
+    static CCMenuItemToggler createToggleButton(gd::string, cocos2d::SEL_MenuHandler, bool, cocos2d::CCMenu*, cocos2d::CCPoint, cocos2d::CCNode*, cocos2d::CCNode*, float, float, float, cocos2d::CCPoint, char const*, bool, int, cocos2d::CCArray*) = 0x0;
 }
 
 class GJBaseGameLayer : cocos2d::CCLayer {
