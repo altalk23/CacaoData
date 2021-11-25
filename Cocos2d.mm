@@ -83,13 +83,13 @@ class cocos2d::CCDictionary {
     auto count() = 0x190430;
     static cocos2d::CCDictionary* create() = 0x192650;
     auto objectForKey(intptr_t) = 0x190bb0;
-    auto objectForKey(std::string const&) = 0x190870;
+    auto objectForKey(gd::string const&) = 0x190870;
     auto removeAllObjects() = 0x190220;
     auto removeObjectForKey(intptr_t) = 0x1921d0;
     auto setObject(cocos2d::CCObject*, intptr_t) = 0x191790;
-    auto setObject(cocos2d::CCObject*, std::string const&) = 0x190dc0;
+    auto setObject(cocos2d::CCObject*, gd::string const&) = 0x190dc0;
     auto valueForKey(intptr_t) = 0x190cf0;
-    auto valueForKey(std::string const&) = 0x1907a0;
+    auto valueForKey(gd::string const&) = 0x1907a0;
 }
 
 class cocos2d::CCDirector {
@@ -688,7 +688,7 @@ class cocos2d::CCString {
     virtual auto isEqual(cocos2d::CCObject const*) = 0x44c8f0;
     virtual auto acceptVisitor(cocos2d::CCDataVisitor&) = 0x44ccb0;
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone*) = 0x44c870;
-    CCString(std::string const&) = 0x44c310;
+    CCString(gd::string const&) = 0x44c310;
     auto boolValue() const = 0x44c810;
     auto doubleValue() const = 0x44c7f0;
     auto floatValue() const = 0x44c7d0;
@@ -754,8 +754,8 @@ class cocos2d::CCTransitionFade {
 }
 
 class cocos2d::ZipUtils {
-    static auto compressString(std::string, bool, int) = 0xe9a50;
-    static auto decompressString(std::string, bool, int) = 0xea380;
+    static auto compressString(gd::string, bool, int) = 0xe9a50;
+    static auto decompressString(gd::string, bool, int) = 0xea380;
 }
 
 class cocos2d::extension::CCControlColourPicker {
