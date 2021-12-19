@@ -698,7 +698,7 @@ class cocos2d::CCString {
 
 class cocos2d::CCTargetedTouchHandler {
 	static cocos2d::CCTargetedTouchHandler* handlerWithDelegate(cocos2d::CCTouchDelegate*, int, bool) = 0x248010;
-	virtual auto initWithDelegate(cocos2d::CCTouchDelegate*, int, bool) = 0x2480f0;
+	auto initWithDelegate(cocos2d::CCTouchDelegate*, int, bool) = 0x2480f0;
 	~CCTargetedTouchHandler() = 0x248180;
 }
 

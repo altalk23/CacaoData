@@ -356,35 +356,54 @@ class EditorPauseLayer : FLAlertLayer {
 }
 
 class EditorUI : cocos2d::CCLayer {
-	void constrainGameLayerPosition() = 0x1c6d0;
-	void create(LevelEditorLayer*) = 0x8a80;
-	void deselectAll() = 0x1f300;
-	void onDeselectAll(cocos2d::CCObject*) = 0x19cd0;
-	void disableButton(CreateMenuItem*) = 0x1c0f0;
-	void editButtonUsable() = 0x28f30;
-	void editObject(cocos2d::CCObject*) = 0x195a0;
-	void enableButton(CreateMenuItem*) = 0x1bff0;
-	CCMenuItemSpriteExtra* getCreateBtn(int, int) = 0x1f6c0;
-	void getGroupCenter(cocos2d::CCArray*, bool) = 0x23470;
-	cocos2d::CCArray* getSelectedObjects() = 0x23f30;
-	void init(LevelEditorLayer*) = 0x8ae0;
-	virtual void keyDown(cocos2d::enumKeyCodes) = 0x30790;
-	void moveObject(GameObject*, cocos2d::CCPoint) = 0x24b10;
-	void onDuplicate(cocos2d::CCObject*) = 0x18ba0;
-	void pasteObjects(gd::string) = 0x232d0;
-	void playerTouchBegan(cocos2d::CCTouch*, cocos2d::CCEvent*) = 0x2ebf0;
-	void playtestStopped() = 0x24790;
-	void redoLastAction(cocos2d::CCObject*) = 0xb8e0;
-	void replaceGroupID(GameObject*, int, int) = 0x27470;
-	void scaleChanged(float) = 0x25490;
-	void scaleObjects(cocos2d::CCArray*, float, cocos2d::CCPoint) = 0x252e0;
-	void selectObjects(cocos2d::CCArray*, bool) = 0x23940;
-	void setupCreateMenu() = 0xcb50;
-	void undoLastAction(cocos2d::CCObject*) = 0xb830;
-	void updateButtons() = 0x1a300;
-	void updateObjectInfoLabel() = 0x1cb10;
-	void updateSlider() = 0x18a90;
-	void updateZoom(float) = 0x248c0;
+	virtual ~EditorUI() = 0x89e0;
+    virtual void draw() = 0x2e170;
+    virtual bool ccTouchBegan(cocos2d::CCTouch*, cocos2d::CCEvent*) = 0x2ed60;
+    virtual void ccTouchMoved(cocos2d::CCTouch*, cocos2d::CCEvent*) = 0x2f3d0;
+    virtual void ccTouchEnded(cocos2d::CCTouch*, cocos2d::CCEvent*) = 0x2fb00;
+    virtual void ccTouchCancelled(cocos2d::CCTouch*, cocos2d::CCEvent*) = 0x30710;
+    virtual void registerWithTouchDispatcher() = 0x30750;
+    virtual void keyBackClicked() = 0x24c50;
+    virtual void keyDown(cocos2d::enumKeyCodes) = 0x30790;
+    virtual void FLAlert_Clicked(FLAlertLayer*, bool) = 0x1f590;
+    virtual void songStateChanged() = 0x24760;
+    virtual void colorSelectClosed(cocos2d::CCNode*) = 0x29940;
+    virtual void keyUp(cocos2d::enumKeyCodes) = 0x312b0;
+    virtual void scrollWheel(float, float) = 0x31370;
+    virtual void angleChangeBegin() = 0x2e260;
+    virtual void angleChangeEnded() = 0x2e320;
+    virtual void angleChanged(float) = 0x2e3a0;
+    virtual void scaleChangeBegin() = 0x25120;
+    virtual void scaleChangeEnded() = 0x251e0;
+    virtual void scaleChanged(float) = 0x25260;
+
+    void constrainGameLayerPosition() = 0x1c6d0;
+    void create(LevelEditorLayer*) = 0x8a80;
+    void deselectAll() = 0x1f300;
+    void onDeselectAll(cocos2d::CCObject*) = 0x19cd0;
+    void disableButton(CreateMenuItem*) = 0x1c0f0;
+    void editButtonUsable() = 0x28f30;
+    void editObject(cocos2d::CCObject*) = 0x195a0;
+    void enableButton(CreateMenuItem*) = 0x1bff0;
+    CCMenuItemSpriteExtra* getCreateBtn(int, int) = 0x1f6c0;
+    void getGroupCenter(cocos2d::CCArray*, bool) = 0x23470;
+    cocos2d::CCArray* getSelectedObjects() = 0x23f30;
+    void init(LevelEditorLayer*) = 0x8ae0;
+    void moveObject(GameObject*, cocos2d::CCPoint) = 0x24b10;
+    void onDuplicate(cocos2d::CCObject*) = 0x18ba0;
+    void pasteObjects(gd::string) = 0x232d0;
+    void playerTouchBegan(cocos2d::CCTouch*, cocos2d::CCEvent*) = 0x2ebf0;
+    void playtestStopped() = 0x24790;
+    void redoLastAction(cocos2d::CCObject*) = 0xb8e0;
+    void replaceGroupID(GameObject*, int, int) = 0x27470;
+    void scaleObjects(cocos2d::CCArray*, float, cocos2d::CCPoint) = 0x252e0;
+    void selectObjects(cocos2d::CCArray*, bool) = 0x23940;
+    void setupCreateMenu() = 0xcb50;
+    void undoLastAction(cocos2d::CCObject*) = 0xb830;
+    void updateButtons() = 0x1a300;
+    void updateObjectInfoLabel() = 0x1cb10;
+    void updateSlider() = 0x18a90;
+    void updateZoom(float) = 0x248c0;
 
 	LevelEditorLayer* m_editorLayer = 0x408;
 	cocos2d::CCArray* m_editBars = 0x358;
@@ -396,7 +415,7 @@ class EditorUI : cocos2d::CCLayer {
 class EffectGameObject : GameObject {
 	static EffectGameObject* create(char const*) = 0xc9790;
 	void getTargetColorIndex() = 0xca1f0;
-	void triggerObject(GJBaseGameLayer*) = 0xc9870;
+	virtual void triggerObject(GJBaseGameLayer*) = 0xc9870;
 
 	int m_targetGroup = 0x4F8;
 	bool m_activateGroup = 0x578;
